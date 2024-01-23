@@ -1,16 +1,28 @@
-body{
-    margin: 0px;
+* {
+    border: 2px solid red;
 }
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box; /* Учет padding и border в расчетах ширины */
+}
+
 header{
     height: 1080px;
+    margin: 0px;
+    padding: 0px;
     width: 100%;
+    min-width: 100%;
     background-color: #141024;
+    background-position: center;
+    background-size: cover;
     display:grid;
     grid-template-rows: minmax(100px,auto) 1fr;
 }
 .header-up{
     display: grid;
-    grid-template-columns: 400px 1fr 400px ;
+    grid-template-columns: minmax(auto,400px) 1fr minmax(auto,400px);
     padding-top: 40px;
 }
 nav{
@@ -30,7 +42,7 @@ color:#fff;
 }
 .header-logo,
 .header-number{
-    margin: 0 50px;
+    margin: 0 px;
     font-family: Jost;
     font-size: 30px;
     font-weight: 700;
@@ -107,7 +119,34 @@ color:#fff;
     text-align: center;
     transition: all 0.3s ease-in;
 }
-
 .btn:hover {
     background-color: rgba(213, 32, 39, 0.7);
+    transform: scale(0.6);
+}
+.button{
+    transition: all 0.3s ease-in;
+}
+.button:active{
+    transform-origin: left left;
+    transform: scale(0.98);
+}
+.info-title{
+    margin-top:120px;
+    text-align: left;
+    font-family: Jost;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    color: #000;
+    margin-bottom:60px;
+
+}
+.info-title span{
+    font-weight: 600;
+}
+.achievements-holder{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:40px;
 }
