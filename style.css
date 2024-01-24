@@ -1,11 +1,11 @@
-* {
+/* * {
     border: 2px solid red;
-}
+} */
 body {
     margin: 0;
     padding: 0;
     width: 100%;
-    box-sizing: border-box; /* Учет padding и border в расчетах ширины */
+    box-sizing: border-box;
 }
 
 header{
@@ -13,7 +13,6 @@ header{
     margin: 0px;
     padding: 0px;
     width: 100%;
-    min-width: 100%;
     background-color: #141024;
     background-position: center;
     background-size: cover;
@@ -55,8 +54,12 @@ color:#fff;
     /* margin-top: 50px; */
     display:grid;
     grid-template-columns: 1fr 1fr;
-    gap:250px;
-    align-self: end;
+    grid-template-areas: 
+    "area1 area4"
+    "area2 area4";
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .header-title{
     font-family: Jost;
@@ -66,8 +69,9 @@ color:#fff;
     letter-spacing: 0em;
     text-align: left;
     color:#fff;
-    margin-bottom: 20px;
-    margin-top: 250px;
+    grid-area: area1;
+    align-self:end;
+    justify-self: center;
 }
 .header-desc{
     font-family: Jost;
@@ -75,34 +79,30 @@ color:#fff;
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 0em;
-    text-align: left;
     color:#fff;
-    margin-bottom:50px;
-}
-.left-side{
-    align-self: start;
-    justify-self: right;
-    position: relative;
-}
-.right-side{
-    align-self: end;
-    margin: 0px;
-    justify-self: left;
-    position: relative;
-}
-.circle{
-    position:absolute;
-    top:100px;
-    left:-140px;
-    width:650px;
-    height: 650px;
-    border:70px solid #fff;
-    border-radius: 50%;;
-    z-index: 0;
+    align-self:center;
+    justify-self: center;
+    padding-top: 0px;
+    margin: 40px 0;
+    text-align: center;
 }
 .image{
-    position: relative;
-    z-index: 999;
+    grid-area:area4;
+    align-self: end;
+    background: url(Ellipse.svg) no-repeat center;
+    background-size:800px;
+}
+.button{
+    margin-top: 40px;
+    grid-area:area2;
+    align-self:start;
+    justify-self: center;
+}
+@media(max-width:1650px){
+    .header-down{
+        display:grid;
+        grid-template-columns: 1fr 1.5fr;
+    }
 }
 .btn {
     background-color: rgba(213, 32, 39, 1);
@@ -130,8 +130,10 @@ color:#fff;
     transform-origin: left left;
     transform: scale(0.98);
 }
+.container{
+    margin: 100px 200px;
+}
 .info-title{
-    margin-top:120px;
     text-align: left;
     font-family: Jost;
     font-size: 30px;
@@ -149,4 +151,114 @@ color:#fff;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap:40px;
+}
+.ach-item{
+    font-family: Jost;
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 112px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#D52027;
+}
+.ach-item div{
+    font-family: Jost;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#141024;
+}
+@media(max-width:1400px){
+    header{
+        height: 1400px;
+    }
+    .header-desc,
+    .header-title{
+        text-align: center;
+    }
+    .header-title{
+        margin-top: 40px;
+    }
+    .header-down{
+        display:block;
+        text-align: center;
+    }
+    .achievements-holder{
+        display: block;
+        text-align: center;
+    }
+    .ach-item,
+    .ach-item div{
+        text-align: center;
+    }
+}
+.features{
+    background-color:rgba(249, 249, 249, 1);
+    padding: 50px 0;
+}
+.containerFeat{
+    margin:0 200px;
+}
+.features-title{
+    text-align: left;
+    font-family: Jost;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0em;
+    color: #000;
+    margin-bottom:60px;
+
+}
+.features-holder{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:40px;
+}
+.feat-item{
+    font-family: Jost;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#000;
+
+}
+.feat-item div{
+    font-family: Jost;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#141024;
+}
+.containerCouch{
+    display: block;
+    text-align: center;
+    margin:100px 200px;
+}
+.couch-title{
+    font-family: Jost;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 80px;
+    letter-spacing: 0em;
+    text-align: center;
+    color:#141024;
+}
+.card-holder{
+    display: grid;
+    grid-template-columns: repeat(5,360px);
+    gap:150px;
+    overflow: auto;
+}
+.card{
+    height: 500px;
+    border-radius: 30px;
+    background: url(card1.jpg) no-repeat center;
+    margin:40px 0;
 }
